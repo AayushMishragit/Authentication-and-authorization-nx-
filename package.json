@@ -4,7 +4,10 @@
   "license": "MIT",
   "scripts": {
     "build": "nx build my-react-app",
-    "start": "nx serve my-react-app"
+    "start": "nx serve my-react-app",
+    "build:backend": "npx tsc",
+  "start:backend": "node dist/index.js",
+  "dev:backend": "ts-node index.ts"
   },
   "private": true,
   "devDependencies": {

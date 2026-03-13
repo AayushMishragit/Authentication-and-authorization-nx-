@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/app/routes/auth.route.ts"],
+  "sourcesContent": ["import { Router } from \"express\";\r\n\r\nimport { register,login,Logout,deleteUser } from \"../contollers/auth.controllers\";\r\nimport userVerification from \"../middlewares/auth.middlewares\";\r\n\r\nexport const authRouter = Router();\r\n//auth requests\r\nauthRouter.post('/register',register);\r\nauthRouter.post('/login',login);\r\nauthRouter.post('/logout',Logout);\r\nauthRouter.delete('/delete/:id',deleteUser);\r\nauthRouter.post('/',userVerification);\r\nexport default authRouter;\r\n\r\n\r\n//product apis \r\n\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,qBAAuB;AAEvB,kBAAiD;AACjD,IAAAA,eAA6B;AAEtB,MAAM,iBAAa,uBAAO;AAEjC,WAAW,KAAK,aAAY,oBAAQ;AACpC,WAAW,KAAK,UAAS,iBAAK;AAC9B,WAAW,KAAK,WAAU,kBAAM;AAChC,WAAW,OAAO,eAAc,sBAAU;AAC1C,WAAW,KAAK,KAAI,aAAAC,OAAgB;AACpC,IAAO,qBAAQ;",
+  "names": ["import_auth", "userVerification"]
+}

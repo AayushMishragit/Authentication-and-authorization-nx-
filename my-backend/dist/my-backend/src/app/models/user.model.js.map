@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/app/models/user.model.ts"],
+  "sourcesContent": ["import { Schema, model } from 'mongoose';\r\n//import bcrypt from 'bcrypt';\r\n\r\n\r\n// --- 1. CORE USER SCHEMA (Authentication) ---\r\nconst userSchema = new Schema({\r\n  email: {\r\n    type: String,\r\n    required: [true, 'Your email address is required'],\r\n    unique: true,\r\n    lowercase: true,\r\n    trim: true,\r\n  },\r\n  fullName: { // UI shows \"Full Name\" and \"Admin Full Name\"\r\n    type: String,\r\n    required: [true, 'Full name is required'],\r\n    trim: true,\r\n  },\r\n  password: {\r\n    type: String,\r\n    required: [true, 'Your password is required'],\r\n    minlength: [6, 'Password must be at least 6 characters'],\r\n    hashed:true\r\n    \r\n  },\r\n  \r\n  createdAt: { type: Date, default: () => new Date() },\r\n});\r\n\r\n\r\n\r\n\r\n\r\nexport const User = model('User', userSchema);\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,sBAA8B;AAK9B,MAAM,aAAa,IAAI,uBAAO;AAAA,EAC5B,OAAO;AAAA,IACL,MAAM;AAAA,IACN,UAAU,CAAC,MAAM,gCAAgC;AAAA,IACjD,QAAQ;AAAA,IACR,WAAW;AAAA,IACX,MAAM;AAAA,EACR;AAAA,EACA,UAAU;AAAA;AAAA,IACR,MAAM;AAAA,IACN,UAAU,CAAC,MAAM,uBAAuB;AAAA,IACxC,MAAM;AAAA,EACR;AAAA,EACA,UAAU;AAAA,IACR,MAAM;AAAA,IACN,UAAU,CAAC,MAAM,2BAA2B;AAAA,IAC5C,WAAW,CAAC,GAAG,wCAAwC;AAAA,IACvD,QAAO;AAAA,EAET;AAAA,EAEA,WAAW,EAAE,MAAM,MAAM,SAAS,MAAM,oBAAI,KAAK,EAAE;AACrD,CAAC;AAMM,MAAM,WAAO,uBAAM,QAAQ,UAAU;",
+  "names": []
+}
