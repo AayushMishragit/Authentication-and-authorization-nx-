@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "nx build my-react-app",
+    "build": "npx nx build backend",
     "start": "nx serve my-react-app",
-    "build:backend": "npx tsc",
-  "start:backend": "node dist/index.js",
-  "dev:backend": "ts-node index.ts"
+  "build:backend": "npx tsc -p my-backend/tsconfig.json",
+  "start:backend": "node dist/my-backend/index.js"
   },
   "private": true,
   "devDependencies": {
