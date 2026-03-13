@@ -38,9 +38,9 @@ function Form({ onLogin }: { onLogin: (auth: boolean) => void }) {
     setForm({...form,[e.target.name]:e.target.value});
   }
   return (
-    <div className="relative min-h-screen sm:w-full flex items-center justify-center overflow-hidden bg-[#0e1232] w-96 ">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#0e1232] px-4 sm:px-0">
     
-    <div className="glass-card rounded-3xl   shadow-xl m-[150px] p-8 border border-gray-100/10 bg-white/5 w-[370px] shadow-white/10">
+    <div className="glass-card rounded-3xl shadow-xl p-8 border border-gray-100/10 bg-white/5 w-full max-w-[370px] shadow-white/10 my-8">
     <div className="flex flex-col items-center mb-8">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">

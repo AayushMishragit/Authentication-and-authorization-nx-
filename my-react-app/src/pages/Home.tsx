@@ -32,45 +32,49 @@ const featuresData = [
   return (
     <>
      <div className="bg-white-500 min-h-screen items-center justify-center">
-  <section className="bg-gradient-to-r bg-[#19143c] text-white py-20">
+  <section className="bg-gradient-to-r bg-[#19143c] text-white py-20 px-4">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center">
-        <h1 className="font-bold text-white-600 text-6xl md:text-7xl gap-2">
+        <h1 className="font-bold text-white-600 text-4xl sm:text-5xl md:text-7xl gap-2 tracking-tight">
           Welcome to ShopHub
         </h1>
-        <p className="text-xl md:text-2xl mb-8 mt-3 text-blue-100">
+        <p className="text-lg md:text-2xl mb-8 mt-3 text-blue-100">
           Discover amazing products at unbeatable prices
         </p>
-        <div className="flex justify-center">
-          <Button
-            text="Shop Now"
-            bgcolor="#4097fa"
-            textcolor="#ffffff"
-            Icon={ArrowRight}
-            onClick={() => navigate("/products")}
-          />
-           <Button 
-         text="Logout"
-            bgcolor="#dae1ead4"
-            textcolor="#434141"
-            Icon={ArrowRight}
-            onClick={handleLogout}/>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="w-full sm:w-auto sm:display-flex">
+            <Button
+              text="Shop Now"
+              bgcolor="#4097fa"
+              textcolor="#ffffff"
+              Icon={ArrowRight}
+              onClick={() => navigate("/products")}
+            />
+          </div>
+          <div className="w-full sm:w-auto">
+            <Button 
+            text="Logout"
+              bgcolor="#dae1ead4"
+              textcolor="#434141"
+              Icon={ArrowRight}
+              onClick={handleLogout}/>
+          </div>
       </div>
         </div>
        
       
     </div>
     
-    <div className="gap-8 pt-8 flex justify-center">
-          <div >
+    <div className="gap-8 pt-12 flex flex-col sm:flex-row justify-center items-center">
+          <div className="text-center">
             <div className="font-bold gradient-text text-3xl">50k+</div>
             <div className="font-light text-white-300">Happy customers</div>
           </div>
-          <div >
+          <div className="text-center">
             <div className="font-bold gradient-text text-3xl">1000+</div>
             <div className="font-light text-white-300">Products</div>
           </div>
-          <div >
+          <div className="text-center">
             <div className="font-bold gradient-text text-3xl">24/7</div>
             <div className="font-light text-white-300">Support</div>
           </div>
