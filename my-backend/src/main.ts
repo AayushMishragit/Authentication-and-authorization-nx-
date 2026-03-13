@@ -18,10 +18,13 @@ const app = express();
 
 //middlewares = > inke madad se hum apne request aur response ko modify kar sakte hai
 //ye ek function hota hai jo request aur response ke beech me execute hota hai
-const allowedOrigins = [
-  'http://localhost:4200',
-  'https://authentication-and-authorization-nx.vercel.app/' // your Vercel URL
-];
+app.use(cors({
+  origin: [
+    'http://localhost:4200',
+    'https://authentication-and-authorization-nx.vercel.app'
+  ],
+  credentials: true
+}));
 //this will allow all origins to access our api
 
 app.use(express.json());// this will allow us to parse json data in the request body
