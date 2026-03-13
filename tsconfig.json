@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./my-backend"
+    },
+    {
+      "path": "./my-react-app"
+    },
+    {
+      "path": "./lib/button"
+    },
+    {
+      "path": "./lib/f_card"
+    },
+    {
+      "path": "./lib/product-lib"
+    }
+  ]
+}
