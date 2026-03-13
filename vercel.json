@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npx nx build my-react-app",
+  "outputDirectory": "my-react-app/dist",
+  "installCommand": "npm install"
+}

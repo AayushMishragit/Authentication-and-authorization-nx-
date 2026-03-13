@@ -20,9 +20,8 @@
     "baseUrl": ".",
     "paths": {
        "@my-workspace/button": ["lib/button/src/index.ts"],
-       "@my-workspace/f_card": ["lib/f_card/src/index.ts"],
-  
-}
+       "@my-workspace/f_card": ["lib/f_card/src/index.ts"]
+    }
   }
 }
 
