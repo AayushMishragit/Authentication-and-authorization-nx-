@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npx nx build backend",
-    "start": "nx serve my-react-app",
-  "build:backend": "npx tsc -p my-backend/tsconfig.json",
-  "start:backend": "node dist/my-backend/index.js"
+    "start": "nx run-many --target=serve --all",
+    "start:frontend": "nx serve my-react-app",
+    "start:backend": "nx serve my-backend",
+    "build": "nx run-many --target=build --all",
+    "build:frontend": "nx build my-react-app",
+    "build:backend": "nx build my-backend",
+    "render:build": "nx build my-backend",
+    "render:start": "node my-backend/dist/main.js"
   },
   "private": true,
   "devDependencies": {

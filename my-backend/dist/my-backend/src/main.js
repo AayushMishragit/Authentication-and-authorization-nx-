@@ -22,6 +22,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 var import_express = __toESM(require("express"));
+var import_cors = __toESM(require("cors"));
 var dotenv = __toESM(require("dotenv"));
 var import_auth = require("./app/routes/auth.route");
 var import_mongoose = __toESM(require("mongoose"));
@@ -29,11 +30,13 @@ var import_cookie_parser = __toESM(require("cookie-parser"));
 dotenv.config();
 const host = process.env.HOST ?? "localhost";
 const app = (0, import_express.default)();
-const allowedOrigins = [
-  "http://localhost:4200",
-  "https://authentication-and-authorization-nx.vercel.app/"
-  // your Vercel URL
-];
+app.use((0, import_cors.default)({
+  origin: [
+    "http://localhost:4200",
+    "https://authentication-and-authorization-nx.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(import_express.default.json());
 app.use((0, import_cookie_parser.default)());
 app.use("/my-backend/routes/auth", import_auth.authRouter);
