@@ -28,7 +28,6 @@ var import_auth = require("./app/routes/auth.route");
 var import_mongoose = __toESM(require("mongoose"));
 var import_cookie_parser = __toESM(require("cookie-parser"));
 dotenv.config();
-const host = process.env.HOST ?? "localhost";
 const app = (0, import_express.default)();
 app.use((0, import_cors.default)({
   origin: [
@@ -40,9 +39,9 @@ app.use((0, import_cors.default)({
 app.use(import_express.default.json());
 app.use((0, import_cookie_parser.default)());
 app.use("/my-backend/routes/auth", import_auth.authRouter);
-const PORT = process.env.PORT ? Number(process.env.PORT) : 4e3;
-import_mongoose.default.connect(process.env.MONGO_URI).then(() => console.log("MongoDB is  connected successfully")).catch((err) => console.error(err));
-app.listen(PORT, host, () => {
-  console.log(`server is running at  \u{1F680}  http://${host}:${PORT}`);
+const PORT = process.env.PORT || 4e3;
+import_mongoose.default.connect(process.env.MONGO_URI).then(() => console.log("MongoDB connected successfully")).catch((err) => console.error(err));
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
 //# sourceMappingURL=main.js.map
