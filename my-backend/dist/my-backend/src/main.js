@@ -39,7 +39,7 @@ app.use((0, import_cors.default)({
 app.use(import_express.default.json());
 app.use((0, import_cookie_parser.default)());
 app.use("/my-backend/routes/auth", import_auth.authRouter);
-const PORT = process.env.PORT || 4e3;
+const PORT = process.env.PORT ? Number(process.env.PORT) : 4e3;
 import_mongoose.default.connect(process.env.MONGO_URI).then(() => console.log("MongoDB connected successfully")).catch((err) => console.error(err));
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);

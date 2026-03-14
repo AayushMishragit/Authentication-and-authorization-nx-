@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use('/my-backend/routes/auth', authRouter);
 
-const PORT = process.env.PORT || 4000;
+ const PORT = process.env.PORT ? Number(process.env.PORT) : 4000;
 
 mongoose.connect(process.env.MONGO_URI as string)
   .then(() => console.log("MongoDB connected successfully"))
