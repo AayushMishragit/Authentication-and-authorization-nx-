@@ -11,11 +11,12 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:4200',
-    'https://authentication-and-authorization-nx.vercel.app'
+    "http://localhost:4200",
+    /\.vercel\.app$/
   ],
   credentials: true
 }));
+  
 
 app.use(express.json());
 app.use(cookieParser());

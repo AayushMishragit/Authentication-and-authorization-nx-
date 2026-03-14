@@ -32,7 +32,7 @@ const app = (0, import_express.default)();
 app.use((0, import_cors.default)({
   origin: [
     "http://localhost:4200",
-    "https://authentication-and-authorization-nx.vercel.app"
+    /\.vercel\.app$/
   ],
   credentials: true
 }));
