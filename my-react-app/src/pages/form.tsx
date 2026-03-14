@@ -18,7 +18,8 @@ function Form({ onLogin }: { onLogin: (auth: boolean) => void }) {
   try {
     const { data } = await axios.post(
       "https://authentication-and-authorization-nx-1.onrender.com/my-backend/routes/auth/login",
-      form
+      form,
+      { withCredentials: true }
     );
 
     if (data.token) {

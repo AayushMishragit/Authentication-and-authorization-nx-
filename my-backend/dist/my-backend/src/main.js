@@ -32,7 +32,9 @@ const app = (0, import_express.default)();
 app.use((0, import_cors.default)({
   origin: [
     "http://localhost:4200",
-    /\.vercel\.app$/
+    "https://authentication-and-authorization-nx.vercel.app",
+    "https://authentication-and-authori-git-4b469e-aayushmishragits-projects.vercel.app",
+    "https://authentication-and-authorization-pexq0ru0a.vercel.app"
   ],
   credentials: true
 }));

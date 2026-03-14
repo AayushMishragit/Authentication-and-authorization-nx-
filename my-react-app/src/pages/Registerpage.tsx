@@ -5,7 +5,7 @@ import {toast, ToastContainer} from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const api_url = ' https://authentication-and-authorization-nx-1.onrender.com/my-backend/routes/auth';
+const api_url = 'https://authentication-and-authorization-nx-1.onrender.com/my-backend/routes/auth';
 
 function Registerpage() {
   const Navigate = useNavigate();
@@ -19,15 +19,13 @@ function Registerpage() {
   const handleSubmit = async (e:React.FormEvent) =>{
        e.preventDefault();
        try{
-        const {data} =await axios.post(`${api_url}/register`,form,{withCredentials:true});
+        const res = await axios.post(`${api_url}/register`, form, {withCredentials:true});
 
-        if(data.token){
-          toast.success(data.message,{position:"top-center"});
-          setTimeout(()=>Navigate("/cart"),2000);
-        }
-        else{
-          toast.error(data.error,{position:"bottom-left"});
-          
+        if (res.status === 201) {
+          toast.success("User registered successfully");
+          setTimeout(() => Navigate('/login'), 1500); // Redirect to login page
+        } else {
+          toast.error("Registration failed", {position:"bottom-left"});
         }
        }catch(error:any){
        toast.error(error?.response?.data?.message || "Registration failed.");

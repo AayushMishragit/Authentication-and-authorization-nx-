@@ -41,7 +41,7 @@ export const register = async (req: Request, res: Response, next: NextFunction):
     res.cookie("token", token, {
       httpOnly: true,
       secure: true,
-      sameSite: "strict",
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
 
@@ -83,6 +83,14 @@ export const login = async (req: Request, res: Response, next: NextFunction): Pr
 
     // 4. Generate token
     const token = generateToken(user._id.toString());
+
+    // Set cookie
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
 
     // 5. Send response
     res.status(200).json({
