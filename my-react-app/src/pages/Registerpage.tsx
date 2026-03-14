@@ -5,7 +5,7 @@ import {toast, ToastContainer} from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const api_url = 'http://localhost:4000/my-backend/routes/auth';
+const api_url = ' https://authentication-and-authorization-nx-1.onrender.com/my-backend/routes/auth';
 
 function Registerpage() {
   const Navigate = useNavigate();
