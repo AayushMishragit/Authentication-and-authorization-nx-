@@ -1,11 +1,11 @@
 //import React, { ChangeEvent } from 'react'
-import { Activity, ShoppingBasket} from "lucide-react";
+import {  ShoppingBasket} from "lucide-react";
 import { useState } from "react";
 import {toast, ToastContainer} from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const api_url = 'https://authentication-and-authorization-nx-1.onrender.com/my-backend/routes/auth';
+const api_url = 'https://authentication-and-authorization-nx-1.onrender.com/auth';
 
 function Registerpage() {
   const Navigate = useNavigate();
@@ -23,7 +23,7 @@ function Registerpage() {
 
         if (res.status === 201) {
           toast.success("User registered successfully");
-          setTimeout(() => Navigate('/login'), 1500); // Redirect to login page
+          setTimeout(() => Navigate('/'), 1500); // Redirect to login page
         } else {
           toast.error("Registration failed", {position:"bottom-left"});
         }

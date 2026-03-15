@@ -47,12 +47,17 @@ export const register = async (req: Request, res: Response, next: NextFunction):
 
     // 7. Send single success response
     res.status(201).json({
+      success:true,
       message: "User registered successfully",
       username: newUser.fullName,
       token
     });
   } catch (error) {
-    next(error);
+    console.error(error);
+    res.status(500).json({
+      success:false,
+      message:"Server Error"
+    });
   }
 };
 

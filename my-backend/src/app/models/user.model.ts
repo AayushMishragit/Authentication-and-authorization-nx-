@@ -20,7 +20,7 @@ const userSchema = new Schema({
     type: String,
     required: [true, 'Your password is required'],
     minlength: [6, 'Password must be at least 6 characters'],
-    hashed:true
+
     
   },
   

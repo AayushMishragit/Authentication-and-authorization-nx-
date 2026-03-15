@@ -1,6 +1,6 @@
 //import React from 'react'
 import { useNavigate} from "react-router-dom";
-import { Activity, LogIn, ShoppingBasketIcon} from "lucide-react";
+import {  LogIn} from "lucide-react";
 import { useState } from "react";
 import axios from "axios";
 import {toast, ToastContainer} from "react-toastify";
