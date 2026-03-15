@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'https://authentication-and-authorization-nx.vercel.app', // exact Vercel URL
+  origin: 'https://authentication-and-authorization-d29simmzh.vercel.app', // exact Vercel URL
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   
