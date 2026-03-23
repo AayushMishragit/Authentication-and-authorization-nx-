@@ -21,7 +21,7 @@ app.options('*', cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/auth', authRouter);
+app.use('/api', authRouter);
 
  const PORT = process.env.PORT ? Number(process.env.PORT) : 4000;
 
